@@ -55,3 +55,66 @@ m[i,j] = min for i ≤ k < j { m[i,k] + m[k+1,j] + p[i-1] * p[k] * p[j] }
 
 b) Minimum scalar multiplications (number only):
 158
+---
+
+7. Longest Common Subsequence (X = "ABCDGH", Y = "AEDFHR")
+
+a) Recurrence and base case:
+
+LCS(i,0) = 0, LCS(0,j) = 0
+if X[i] == Y[j]:
+    LCS(i,j) = LCS(i-1, j-1) + 1
+else:
+    LCS(i,j) = max( LCS(i-1,j), LCS(i, j-1) )
+
+
+b) LCS length (number only):
+3
+---
+
+8. Optimal Binary Search Tree
+
+(keys: 10,20,30; p = 0.4,0.3,0.3; assume q = 0)
+
+a) DP formulation with base:
+
+e[i,i-1] = 0;  w[i,i-1] = 0
+w[i,j] = w[i, j-1] + p[j]
+e[i,j] = min for r = i..j { e[i,r-1] + e[r+1,j] + w[i,j] }
+
+
+b) Minimum expected search cost (number only):
+1.7
+---
+
+9. 0/1 Knapsack – Branch & Bound
+
+(W = 5; w = {2,3,4,5}, p = {3,4,5,6})
+
+a) Fractional upper bound formula:
+
+ub = V + sum of next items fully fitting + (fraction of next item if partially fits)
+
+
+b) Level-0 and Level-1 nodes (v, w, ub):
+
+Level-0 (Root): (0, 0, 7.0)
+
+Level-1 Include Item1: (3, 2, 7.0)
+
+Level-1 Exclude Item1: (0, 0, 6.5)
+---
+
+10. TSP – Dynamic Programming (Held–Karp; 4 cities)
+
+a) Recurrence and final expression:
+
+C[{k},k] = D[1][k]
+C[S,j] = min for i ∈ S, i ≠ j { C[S-{j},i] + D[i][j] }
+Final = min for j ∈ {2..n} { C[{2..n},j] + D[j][1] }
+
+
+b) Base entries C[{k},k] for k = 2..4:
+C[{2},2] = D[1,2]
+C[{3},3] = D[1,3]
+C[{4},4] = D[1,4]
