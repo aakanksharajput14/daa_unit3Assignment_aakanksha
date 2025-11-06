@@ -44,3 +44,14 @@ Ans- Definition: A state-space search method that generates branches of partial 
 - Bounding: Bound estimates the best achievable value from a node; weak nodes are pruned to reduce search.  
 
 ---
+SECTION B – Algorithms & Recurrences (15 Marks)
+
+### 6. Matrix Chain Multiplication (A₁:5×4, A₂:4×6, A₃:6×2, A₄:2×7)
+
+**a)** Recurrence and base case:
+```text
+m[i,i] = 0
+m[i,j] = min for i ≤ k < j { m[i,k] + m[k+1,j] + p[i-1] * p[k] * p[j] }
+
+b) Minimum scalar multiplications (number only):
+158
