@@ -24,3 +24,23 @@ Enrollment no: 03313302723
 ---
 3) Principle of optimality  
 - Define it in one sentence and name any one problem satisfying it.
+Ans- Definition: If an optimal solution contains optimal solutions to its subproblems, the problem follows the principle of optimality.  
+- Example: Matrix Chain Multiplication.  
+
+---
+
+ 4. Memoization  
+Define memoization and contrast with tabulation in one line each.
+
+Ans- Memoization:Top-down approach storing results of solved subproblems to avoid recomputation.  
+- Tabulation: Bottom-up approach computing all subproblems iteratively in a table.  
+
+---
+
+5. Branch and Bound Idea  
+Define BnB and the role of bounding in pruning in two lines.
+
+Ans- Definition: A state-space search method that generates branches of partial solutions while tracking bounds of optimal value.  
+- Bounding: Bound estimates the best achievable value from a node; weak nodes are pruned to reduce search.  
+
+---
